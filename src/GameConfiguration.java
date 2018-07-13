@@ -1,4 +1,8 @@
-
+/*
+ * Tony's Class
+ * To Do 
+ *
+ */
 public class GameConfiguration {
 	int[][] boardSize;
 	private int x;

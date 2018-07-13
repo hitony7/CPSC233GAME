@@ -1,7 +1,8 @@
 /*
- *  init with piece color(x,o)
- *  stat like turn, etc
- *  get player input
+ * Minnie's Class
+ *  To Do
+ *  properties of a player(Variables)
+ *  get play input
  */
 public class Player {
 

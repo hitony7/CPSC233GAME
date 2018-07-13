@@ -1,5 +1,8 @@
 /*
+ *Nathaniel's Class
+ *To Do:
  *ties everything 
+ *Create instance of objects
  *
  */
 public class Game {
