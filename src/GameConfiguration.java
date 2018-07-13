@@ -13,7 +13,7 @@ public class GameConfiguration {
 	public GameConfiguration(int x, int y) {
 		this.y = y;
 		this.x = x;
-		boardSize = new int[x][y]; 
+		boardSize = new int[this.x][this.y]; 
 	}
 	
 	public int getPiece(int x, int y) {
