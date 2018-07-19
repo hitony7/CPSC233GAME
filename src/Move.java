@@ -17,7 +17,7 @@ public class Move {
 		}
 		for (int row = 0; row < 7; ++ row) {
 			if (board[row][column] != '_') { //Loop iterates until it sees another token occupying a row
-				field[row-1][column] = token;  //Places the token in the free space above the other token it just found
+				board[row-1][column] = token;  //Places the token in the free space above the other token it just found
 				return true;
 			}
 		}
