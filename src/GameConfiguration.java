@@ -75,6 +75,7 @@ public class GameConfiguration {
 	 */
 	public void setToken(char tokenType, int x, int y) {
 		board[x][y] = tokenType;
+		
 	}
 	
 

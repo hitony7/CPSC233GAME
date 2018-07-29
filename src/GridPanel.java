@@ -1,4 +1,5 @@
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -7,6 +8,7 @@ public class GridPanel {
 	private int ROW;
 	private int COL;
 	private GridPane grid = new GridPane();
+
 	
 	public GridPanel(GameConfiguration board) {
 		this.ROW = board.ROW;
@@ -20,9 +22,8 @@ public class GridPanel {
 	        grid.setStyle("-fx-background-color: DODGERBLUE;");
 
 	        for (int x = ROW; x > 0; x--){
-	        	System.out.println("x");
+	        	
 	            for (int y = 0; y < COL; y++){
-	            	System.out.println("y");
 	            	//Currently creating token class will replace cirlces
 	                Circle circle = new Circle(50, Color.WHITE);
 	                circle.setStroke(Color.BLACK);
@@ -41,6 +42,8 @@ public class GridPanel {
 		 	} else
 		 		circle.setFill(Color.BLUE);
 		 		circle.setStroke(Color.BLACK);
-		   grid.add(circle, y, x-1);
+		   grid.add(circle, y, x);
+		   
 	 }
+	 
 }

@@ -15,9 +15,10 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 
-public class Screen extends Application implements EventHandler<ActionEvent>  {
+public class Screen extends Application implements EventHandler<ActionEvent>   {
 	private Game game = new Game();
 	private GridPanel board = new GridPanel(game.getConfig());
+	private Input input = new Input();
 	private Toolbar bar= new Toolbar();
 	private Startpanel menuP = new Startpanel();
 	public Scene startMenu, gameB;
@@ -36,7 +37,7 @@ public class Screen extends Application implements EventHandler<ActionEvent>  {
 		this.primaryStage.setTitle("Connect 4");
 		VBox rootPane= new VBox();
 		gameB = new Scene(rootPane);
-		rootPane.getChildren().addAll(bar.createBorderPane(),board.makeGridPane());
+		rootPane.getChildren().addAll(bar.createBorderPane(),input.makeInput(),board.makeGridPane());
 		rootPane.autosize();
 	
 		
@@ -58,6 +59,7 @@ public class Screen extends Application implements EventHandler<ActionEvent>  {
 		// TODO Auto-generated method stub
 		if(event.getSource() == menuP.pVPButton) {
 			this.primaryStage.setScene(gameB);
+			//game.play();
 		}
 		if(event.getSource() == menuP.pVCompButton) {
 			this.primaryStage.setScene(gameB);
@@ -67,6 +69,7 @@ public class Screen extends Application implements EventHandler<ActionEvent>  {
 		}
 		if(event.getSource() == bar.homeButton) {
 			this.primaryStage.setScene(startMenu);
+			board.setPiece(5, 6, 'x');
 		}
 		
 		}

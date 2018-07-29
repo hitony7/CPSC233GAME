@@ -16,6 +16,9 @@
  * @version 1.0
  */
 public class Game {
+	public  Game () {
+		
+	}
 
   /**
    * Main method for playing/testing the Game class implementation.
@@ -115,6 +118,7 @@ public class Game {
 
     }
   }
+
 
 public GameConfiguration getConfig() {
 	return config;
