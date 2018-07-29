@@ -9,21 +9,6 @@ public class GameConfiguration {
 	/**
 	* Main method for testing the Move class implementation.
 	*/
-	public static void main(String[] args) {
-
-		GameConfiguration config = new GameConfiguration();
-
-		System.out.println("Testing default constructor.");
-		System.out.println(config.getToken(0,0)); //Checks to make sure free spaces are being added to the board.
-
-		System.out.println("Testing setter.");
-		config.setToken('x', 0, 0);
-		System.out.println(config.getToken(0,0)); //Checks to make sure a 'x' is properly set in the board.
-
-		System.out.println("Testing draw method.");
-		config.draw(); //Prints out Connect4 board to see how it looks after configuration.
-
-	}
 
 	/**
 	 * board declares the Connect4 board.
@@ -91,6 +76,7 @@ public class GameConfiguration {
 	public void setToken(char tokenType, int x, int y) {
 		board[x][y] = tokenType;
 	}
+	
 
 	/**
 	 * draw makes the output of the Connect4 board in the text based interface.

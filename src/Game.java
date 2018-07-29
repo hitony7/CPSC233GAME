@@ -20,13 +20,13 @@ public class Game {
   /**
    * Main method for playing/testing the Game class implementation.
    */
-  public static void main(String[] args) {
+ // public static void main(String[] args) {
 
-    Game connect4 = new Game();
+   // Game connect4 = new Game();
 
-    connect4.play();
+   // connect4.play();
 
-  }
+  //}
 
   /**
    * Creates a Connect4 board object using the GameConfiguration class.
@@ -60,7 +60,7 @@ public class Game {
 
     System.out.println("Welcome to the game of Connect4!"); //Greets the players
 
-    config.draw(); //Draws the initial empty board.
+    getConfig().draw(); //Draws the initial empty board.
 
     game: //Declares the main loop of the game.
     while(true) { //Loops until the game has a winner or ends in a draw.
@@ -69,17 +69,17 @@ public class Game {
 
         System.out.println("Player 1's it's your turn to play!");
 
-        if(move.getMove(config.board, p1.getColumn(), config.PP1)) { //Sets the move of Player 1 after the make their input.
+        if(move.getMove(getConfig().board, p1.getColumn(), getConfig().PP1)) { //Sets the move of Player 1 after the make their input.
 
-          if(winner.getWinner(config.board) == config.PP1) { //Checks to see if Player 1 has won.
+          if(winner.getWinner(getConfig().board) == getConfig().PP1) { //Checks to see if Player 1 has won.
 
-            config.draw(); //Draws the winning board.
+            getConfig().draw(); //Draws the winning board.
             System.out.println("Player 1 wins the game!!!");
             break game; //Exits the main loop and thus the game ends.
 
           }
 
-          config.draw(); //Draws the board before the next player's turn.
+          getConfig().draw(); //Draws the board before the next player's turn.
           break; //Player 1's turn is over.
 
         }
@@ -89,23 +89,23 @@ public class Game {
 
         System.out.println("Player 2's it's your turn to play!");
 
-        if(move.getMove(config.board, p2.getColumn(), config.PP2)) { //Sets the move of Player 2 after the make their input.
+        if(move.getMove(getConfig().board, p2.getColumn(), getConfig().PP2)) { //Sets the move of Player 2 after the make their input.
 
-          if(winner.getWinner(config.board) == config.PP2) { //Checks to see if Player 2 has won.
+          if(winner.getWinner(getConfig().board) == getConfig().PP2) { //Checks to see if Player 2 has won.
 
-            config.draw(); //Draws the winning board.
+            getConfig().draw(); //Draws the winning board.
             System.out.println("Player 2 wins the game!!!");
             break game; //Exits the main loop and thus the game ends.
 
           }
 
-          config.draw(); //Draws the board before the next player's turn.
+          getConfig().draw(); //Draws the board before the next player's turn.
           break; //Player 1's turn is over.
 
         }
       }
 
-      if (winner.getWinner(config.board) == 'D') { //Checks to see if the game has ended in a draw. Draws only occur
+      if (winner.getWinner(getConfig().board) == 'D') { //Checks to see if the game has ended in a draw. Draws only occur
                                            //after an equal amount of moves from both players have happened (21).
 
         System.out.println("Game ended in a draw!");
@@ -115,4 +115,12 @@ public class Game {
 
     }
   }
+
+public GameConfiguration getConfig() {
+	return config;
+}
+
+public void setConfig(GameConfiguration config) {
+	this.config = config;
+}
 }

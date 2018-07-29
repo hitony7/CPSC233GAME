@@ -11,15 +11,6 @@ public class HumanPlayer {
   /**
 	* Main method for testing the HumanPlayer class implementation.
 	*/
-	public static void main(String[] args){
-
-		HumanPlayer p1 = new HumanPlayer(); //New HumanPlayer for testing.
-
-    p1.getColumn(); //Asks the user for their column choice.
-
-		System.out.println("Column input is: " + (p1.column +1) + ". Actual dropped column index is: " + p1.column + ".\nTesting Complete");
-
-	}
 
 	/**
 	 * input creates a Scanner object to store user input.

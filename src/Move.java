@@ -9,44 +9,7 @@ public class Move {
 	/**
 	* Main method for testing the Move class implementation.
 	*/
-	public static void main(String[] args) {
 
-		GameConfiguration c4 = new GameConfiguration(); //Easy setup of a blank board.
-		Move m4 = new Move(); //New Move object for testing.
-
-		/**
-		 * Empty column test.
-		 */
-		System.out.println("Testing a move in an empty column.\nBefore,");
-		c4.draw(); //Draws the empty board.
-		System.out.println(m4.getMove(c4.board, 6, 'o')); //Tests if a move can be made in a completely free column, should print true.
-		System.out.println("After,");
-		c4.draw(); //Draws the board after placing 'o' in the far right column.
-
-		/**
-		 * Half-full column test.
-		 */
-		System.out.println("Testing a move in a column that already has tokens in it.\nBefore,");
-		for (int row = 5; row > 2; row --) {	//Fills the far left column with three x's in the bottom two rows.
-			c4.board[row][0] = 'x';
-		}
-		c4.draw(); //Draws the board before placing 'o' in the far left column above the three x's.
-		System.out.println(m4.getMove(c4.board, 0, 'o')); //Tets if a move can be made in half full column, should print true.
-		System.out.println("After,");
-		c4.draw(); //Draws the board after placing 'o' in the far left column, should be in the fourth row from the bottom.
-
-		/**
-		 * Full column test.
-		 */
-		System.out.println("Testing a move in a completely full column.\nBefore,");
-		for (int row = 0; row < 6; row ++) { //Fills the middle column full of x's.
-			c4.board[row][3] = 'x';
-		}
-		c4.draw(); //Draws the board after filling the middle column.
-		System.out.println(m4.getMove(c4.board, 3, 'o')); //Tests if a move can be made on the full middle column, should print false.
-		System.out.println("After,");
-		c4.draw(); //Draws the board after trying to place in full column, should look the same as above.
-	}
 
 	/**
 	 * moveMade stores whether or not a move can be made on the Connect4 board.
