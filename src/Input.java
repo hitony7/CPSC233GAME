@@ -42,7 +42,7 @@ public class Input {
 		this.inputB = inputB;
 	}
 
-	// button array setter
+	// button getter
 	public Button getInputB(int i) {
 		return inputB[i];
 	}

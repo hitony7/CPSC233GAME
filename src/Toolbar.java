@@ -58,6 +58,7 @@ public class Toolbar {
 		// Turn label
 		
 		turnLabel.setFont(Font.font("Courier New", FontWeight.BOLD, 34));
+		turnLabel.setStyle("-fx-text-fill: red;");
 		turnLabel.setTranslateX(100);
 		turnLabel.setTranslateY(15);
 
@@ -106,8 +107,10 @@ public class Toolbar {
 			turnLabel.setText(players[1]+ " has Won!");
 		} else if (player1) {
 			turnLabel.setText(players[0] + "'s \n Turn");
+			turnLabel.setStyle("-fx-text-fill: red;");
 		} else {
-			turnLabel.setText(players[1] + "'s \n Turn");
+			turnLabel.setText(players[1] + "'s \n Turn ");
+			turnLabel.setStyle("-fx-text-fill: Blue;");			
 		}
 		
 	}

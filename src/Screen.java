@@ -45,6 +45,7 @@ public class Screen extends Application implements EventHandler<ActionEvent> {
 		//To be able to referance stage outside start
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Connect 4");
+		this.primaryStage.setResizable(false);
 		//Root Pane that will contain the others 
 		VBox rootPane = new VBox();
 		//Scence for the game board
