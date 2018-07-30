@@ -75,7 +75,7 @@ public class Winner {
         board[row][column] == board[row - 3][column + 3]) {
 
           winner = board[row][column]; //Sets winner to token of the winner in a diagonal.
-          return winner;
+           return winner;
 
         }
       }

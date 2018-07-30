@@ -9,6 +9,7 @@ public class GameConfiguration {
 	/**
 	* Main method for testing the Move class implementation.
 	*/
+	
 
 	/**
 	 * board declares the Connect4 board.

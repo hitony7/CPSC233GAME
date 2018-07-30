@@ -39,11 +39,27 @@ public class GridPanel {
 		 	if (token == 'x') {
 		 		circle.setFill(Color.RED);
                 circle.setStroke(Color.BLACK);
-		 	} else
+		 	} else if (token == 'o') {
 		 		circle.setFill(Color.BLUE);
 		 		circle.setStroke(Color.BLACK);
+		 	} else {
+		 		circle.setFill(Color.WHITE);
+		 		circle.setStroke(Color.BLACK);
+		 	}
 		   grid.add(circle, y, x);
 		   
 	 }
+
+	public void setPiece(char[][] board, char token ) {
+		// TODO Auto-generated method stub
+		Circle circle = new Circle(50);
+		for (int i = 0; i < (board.length); i++) {
+			for (int j = 0; j < (board[0].length); j++) {
+				setPiece(i, j, board[i][j]);
+				
+			}
+		
+	}
 	 
+}
 }
