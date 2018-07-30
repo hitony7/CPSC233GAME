@@ -26,13 +26,13 @@ public class Game {
 	/**
 	 * Main method for playing/testing the Game class implementation.
 	 */
-	// public static void main(String[] args) {
+	 public static void main(String[] args) {
 
-	// Game connect4 = new Game();
+     Game connect4 = new Game();
 
-	// connect4.play();
+	 connect4.play();
 
-	// }
+	 }
 
 	/**
 	 * Creates a Connect4 board object using the GameConfiguration class.
@@ -64,8 +64,14 @@ public class Game {
 	/**
 	 * play method starts the game of Connect4.
 	 */
-	public boolean player1 = true;
-	public boolean gameOver = false;
+	
+	/**
+	 * Variables for the turns 
+	 */
+	public boolean player1 = true; //if false then player 2
+	public boolean gameOver = false; 
+	public boolean gameDraw = false;
+
 	public void play() {
 
 		System.out.println("Welcome to the game of Connect4!"); // Greets the players
@@ -128,28 +134,31 @@ public class Game {
 
 		}
 	}
-
+	/**
+	 * Gets game config
+	 * @return
+	 */
 	public GameConfiguration getConfig() {
 		return config;
 	}
 
-	public void setConfig(GameConfiguration config) {
-		this.config = config;
-	}
 
+	/**
+	 * logic for a players single turn, input player button press col
+	 */
 	public void turn(int col) {
-		if (!gameOver) {
-			if (player1) {
-				if (move.getMove(getConfig().board, col, getConfig().PP1)) {
-					player1 = false;
-					if (winner.getWinner(getConfig().board) == getConfig().PP1) {
+		if (!gameOver) { // Loops until the game has a winner or ends in a draw.
+			if (player1) {  // Start of Player 1's turn.
+				if (move.getMove(getConfig().board, col, getConfig().PP1)) { // Sets the move of Player 1
+					player1 = false; //Change of turn
+					if (winner.getWinner(getConfig().board) == getConfig().PP1) { //Winner check for p1
 						System.out.println("PLayer one has won");
 						gameOver = true;
 					}
 				}
 
 			} else {
-				if (move.getMove(getConfig().board, col, getConfig().PP2)) {
+				if (move.getMove(getConfig().board, col, getConfig().PP2)) { //Player 2 Loop
 					player1 = true;
 					if (winner.getWinner(getConfig().board) == getConfig().PP2) {
 						System.out.println("PLayer two has won");
@@ -159,11 +168,12 @@ public class Game {
 				}
 
 			}
-			 if (winner.getWinner(getConfig().board) == 'D') { 
-				 System.out.println("Draw");
-				 gameOver = true;
+			if (winner.getWinner(getConfig().board) == 'D') { //DRAW Check
+				System.out.println("Draw");
+				gameOver = true;
+				gameDraw = true;
 			}
-			 //debug
+			// debug console check  
 			getConfig().draw();
 			System.out.println("");
 		}

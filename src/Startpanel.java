@@ -1,16 +1,14 @@
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
+/**
+ * Start Menu.
+ *
+ * @author T02-1 - Minnie Thai
+ * @version 1.0
+ */
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
 
 public class Startpanel  {
 	private VBox layout = new VBox();
