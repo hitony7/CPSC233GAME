@@ -68,9 +68,9 @@ public class Game {
 	/**
 	 * Variables for the turns 
 	 */
-	public boolean player1 = true; //if false then player 2
-	public boolean gameOver = false; 
-	public boolean gameDraw = false;
+	private boolean player1 = true; //if false then player 2
+	private boolean gameOver = false; 
+	private boolean gameDraw = false;
 
 	public void play() {
 
@@ -147,22 +147,22 @@ public class Game {
 	 * logic for a players single turn, input player button press col
 	 */
 	public void turn(int col) {
-		if (!gameOver) { // Loops until the game has a winner or ends in a draw.
-			if (player1) {  // Start of Player 1's turn.
+		if (!isGameOver()) { // Loops until the game has a winner or ends in a draw.
+			if (isPlayer1()) {  // Start of Player 1's turn.
 				if (move.getMove(getConfig().board, col, getConfig().PP1)) { // Sets the move of Player 1
-					player1 = false; //Change of turn
+					setPlayer1(false); //Change of turn
 					if (winner.getWinner(getConfig().board) == getConfig().PP1) { //Winner check for p1
 						System.out.println("PLayer one has won");
-						gameOver = true;
+						setGameOver(true);
 					}
 				}
 
 			} else {
 				if (move.getMove(getConfig().board, col, getConfig().PP2)) { //Player 2 Loop
-					player1 = true;
+					setPlayer1(true);
 					if (winner.getWinner(getConfig().board) == getConfig().PP2) {
 						System.out.println("PLayer two has won");
-						gameOver = true;
+						setGameOver(true);
 					}
 
 				}
@@ -170,13 +170,37 @@ public class Game {
 			}
 			if (winner.getWinner(getConfig().board) == 'D') { //DRAW Check
 				System.out.println("Draw");
-				gameOver = true;
-				gameDraw = true;
+				setGameOver(true);
+				setGameDraw(true);
 			}
 			// debug console check  
 			getConfig().draw();
 			System.out.println("");
 		}
+	}
+
+	public boolean isPlayer1() {
+		return player1;
+	}
+
+	public void setPlayer1(boolean player1) {
+		this.player1 = player1;
+	}
+
+	public boolean isGameOver() {
+		return gameOver;
+	}
+
+	public void setGameOver(boolean gameOver) {
+		this.gameOver = gameOver;
+	}
+
+	public boolean isGameDraw() {
+		return gameDraw;
+	}
+
+	public void setGameDraw(boolean gameDraw) {
+		this.gameDraw = gameDraw;
 	}
 
 }

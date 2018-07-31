@@ -71,7 +71,8 @@ public class Toolbar {
 		border.setVisible(true);
 		border.setPrefSize(730, 150);
 
-		// Container setting
+		// Containe
+		r setting
 		contentContainer.getChildren().addAll(connect4Label, playerLabel, homeButton, turnLabel, otherPlayerLabel);
 
 
@@ -98,9 +99,11 @@ public class Toolbar {
 	 * @param gameWon
 	 * @param draw
 	 */
+	
 	public void updateTurn(boolean player1, boolean gameWon, boolean draw) {
 		if (draw) {
 			turnLabel.setText("Draw!");
+			turnLabel.setStyle("-fx-text-fill: Black;");
 		} else if (player1 && gameWon) {
 			turnLabel.setText(players[0]+ " has Won!");	
 		} else if (!player1 && gameWon) {
