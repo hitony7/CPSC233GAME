@@ -14,3 +14,6 @@ To run GUI version of game when in command/console window (src directory) enter 
 To run text version of game when in command/console window (src directory) enter "java connect4text.Game"
 
 README TAKEN From: Natu09
+
+### CLONE FROM TEAMBRANCH for full version
+#### Master is my version
